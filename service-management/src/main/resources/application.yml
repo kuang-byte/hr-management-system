@@ -1,11 +1,15 @@
-server:
-  port: 8761
+spring:
   application:
     name: service-management
+  boot:
+    admin:
+      context-path: /admin
+
+server:
+  port: 8761
 
 eureka:
   client:
     register-with-eureka: false
-    fetch-registry: false
   instance:
     leaseRenewalIntervalInSeconds: 10
