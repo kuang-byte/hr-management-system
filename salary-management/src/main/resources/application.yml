@@ -4,9 +4,26 @@ server:
 spring:
   application:
     name: salary-management
+  datasource:
+    url: jdbc:mysql://home:3306/employees?useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-bean-definition-overriding: true
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: DEBUG
