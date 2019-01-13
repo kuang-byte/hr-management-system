@@ -12,8 +12,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        jdbc:
+          time_zone : UTC
     hibernate:
       ddl-auto: update
+
   main:
     allow-bean-definition-overriding: true
 
@@ -25,5 +28,7 @@ management:
 
 logging:
   level:
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type: DEBUG
+    org:
+      hibernate:
+        hql: DEBUG
+        SQL: DEBUG
