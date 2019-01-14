@@ -1,9 +1,23 @@
 server:
-  port: 8080
+  port: 8083
 
 spring:
   application:
     name: department-management
+  datasource:
+    url: jdbc:mysql://home:3306/employees?useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-bean-definition-overriding: true
 
 eureka:
   client:
@@ -15,3 +29,10 @@ management:
     web:
       exposure:
         include: "*"
+
+logging:
+  level:
+    org:
+      hibernate:
+        hql: DEBUG
+        SQL: DEBUG

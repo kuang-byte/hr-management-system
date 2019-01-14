@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+#zuul:
+#  routes:
+#    salary-management:
+#      path: /sm/**
+#    department-management:
+#      path: /dm/**
+#    employment-management:
+#      path: /em/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

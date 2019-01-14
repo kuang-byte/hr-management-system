@@ -12,5 +12,6 @@
   <modules>
     <module>hr-management-starter</module>
     <module>service-management</module>
+    <module>api-gateway</module>
   </modules>
 </project>
